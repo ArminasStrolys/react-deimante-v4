@@ -1,0 +1,16 @@
+.cuber {
+  background-color: rgb(41, 212, 127);
+  transition: 0.5s;
+  color: white;
+}
+.cuber:hover {
+  background-color: mintcream;
+    color: black;
+}
+.mini{
+  margin: auto;
+  margin-top: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(219, 121, 0);
+}
