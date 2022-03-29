@@ -27,7 +27,7 @@ const Shapes = () => {
               marginTop: "100px",
               width: "100px",
               height: "100px",
-              backgroundColor: "lightsteelblue",
+              backgroundColor: "lightgreen",
               borderRadius: `100%`,
             }}
           ></div>
