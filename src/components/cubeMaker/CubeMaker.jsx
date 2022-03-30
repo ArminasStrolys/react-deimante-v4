@@ -1,3 +1,4 @@
+import { click } from "@testing-library/user-event/dist/click";
 import React, { useState } from "react";
 import "./cubeMaker.css";
 
@@ -6,8 +7,8 @@ function rndNum(min, max) {
 }
 
 const Cubemaker = () => {
-  const [cube, setCube] = useState("");
-  const rnder = rndNum(50, 100);
+
+  const [clicks, setClicks] = useState([]);
 
   return (
     <div
@@ -25,17 +26,19 @@ const Cubemaker = () => {
           borderStyle: "none",
           padding: "10px",
         }}
-        onClick={() =>
-          setCube( cube +
-            console.log(<div style={{ width: `${rnder}px` }} className="mini"></div>)
-          )
+        onClick={() => setClicks((arr) => [...arr, <div key={arr} className="mini"><p className="mini2">{rndNum(0,100)}</p></div>])
         }
       >
         ADD
       </button>
-      <div>{cube}</div>
+      <div>{clicks}</div>
+{console.log(clicks)}
     </div>
   );
 };
 
 export default Cubemaker;
+
+
+// setClicks(cuber.push('test')
+// <div className="mini">TEST</div>

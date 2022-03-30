@@ -5,12 +5,21 @@
 }
 .cuber:hover {
   background-color: mintcream;
-    color: black;
+  color: black;
 }
-.mini{
-  margin: auto;
+.mini {
+  /* margin: auto; */
   margin-top: 20px;
+  position: relative;
+  margin: 15px;
+  display: inline-block;
   width: 50px;
   height: 50px;
-  background-color: rgb(219, 121, 0);
+  background-color: rgb(255, 187, 109);
+}
+.mini2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
