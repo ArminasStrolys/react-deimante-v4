@@ -2,6 +2,7 @@ import Shapes from "../shapes/Shapes";
 import ShapesAndNumbers from "../shapesAndNumbers/ShapesAndNumbers";
 import Counter from "../counter/Counter";
 import CubeMaker from "../cubeMaker/CubeMaker";
+import Five from "../five/Five";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <ShapesAndNumbers />
       <Counter />
       <CubeMaker />
+      <Five />
     </div>
   );
 }
