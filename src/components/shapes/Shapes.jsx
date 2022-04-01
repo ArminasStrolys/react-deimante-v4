@@ -1,8 +1,22 @@
 import React from "react";
 import { useState } from "react";
+import ShapeObject from "./ShapeObject";
 
 const Shapes = () => {
-  let [shapeForm, setShapeForm] = useState(false);
+  let [shapeForm, setShapeForm] = useState({
+    num: 0,
+    col: "blue",
+  });
+
+  const handleNums = () => {
+    if (shapeForm.num === 100) {
+      setShapeForm((shape) => ({ ...shape, num: 0 }));
+      setShapeForm((color) => ({ ...color, col: "blue" }));
+    } else {
+      setShapeForm((shape) => ({ ...shape, num: 100 }));
+      setShapeForm((color) => ({ ...color, col: "red" }));
+    }
+  };
 
   return (
     <>
@@ -16,34 +30,11 @@ const Shapes = () => {
             backgroundColor: "lightgrey",
             borderRadius: "20px",
           }}
-          onClick={() => setShapeForm(!shapeForm)}
+          onClick={handleNums}
         >
           PRESS ME
         </button>
-        {shapeForm && (
-          <div
-            style={{
-              margin: "auto",
-              marginTop: "100px",
-              width: "100px",
-              height: "100px",
-              backgroundColor: "lightgreen",
-              borderRadius: `100%`,
-            }}
-          ></div>
-        )}
-        {!shapeForm && (
-          <div
-            style={{
-              margin: "auto",
-              marginTop: "100px",
-              width: "100px",
-              height: "100px",
-              backgroundColor: "lightcoral",
-              borderRadius: `0%`,
-            }}
-          ></div>
-        )}
+        <ShapeObject num={shapeForm.num} col={shapeForm.col} />
       </div>
     </>
   );
