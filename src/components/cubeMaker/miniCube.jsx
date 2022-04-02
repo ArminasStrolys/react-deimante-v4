@@ -1,14 +1,14 @@
 import React from 'react';
-import './CubeMaker.css';
+import './cubeMaker.css';
 
 function rndNum(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
-const Minicube = () => {
+const Minicube = (props) => {
     return (
         <div className="mini">
-        <p className="mini2">{rndNum(0, 100)}</p>
+        <p className="mini2">{props.cube}</p>
       </div>
     );
 }

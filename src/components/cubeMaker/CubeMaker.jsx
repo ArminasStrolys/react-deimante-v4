@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./cubeMaker.css";
+import MiniCube from "./miniCube";
 
 function rndNum(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
@@ -25,23 +26,18 @@ const Cubemaker = () => {
           padding: "10px",
         }}
         onClick={() =>
-          setClicks((arr) => [
-            ...arr,
-            <div key={arr} className="mini">
-              <p className="mini2">{rndNum(0, 100)}</p>
-            </div>,
-          ])
-        }
+          setClicks((prev) => [...prev, rndNum(0,100)])
+          }
       >
+      {console.log(clicks)}
         ADD
       </button>
-      <div>{clicks}</div>
+      <div>{clicks.map(e=><MiniCube 
+        cube={e}
+      />)}</div>
       {console.log(clicks)}
     </div>
   );
 };
 
 export default Cubemaker;
-
-// setClicks(cuber.push('test')
-// <div className="mini">TEST</div>
