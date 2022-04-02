@@ -8,11 +8,20 @@ function rndNum(min, max) {
 }
 
 const Shapesandnumbers = () => {
-  const [shapes, setShapes] = useState(0);
-  // const [numb, setNumb] = useState(0);
+  const [shapes, setShapes] = useState({
+    form: 0,
+    col: 'lightSalmon'
+  });
+  const [numb, setNumb] = useState(0);
 
   const changeForm = () => {
-    shapes === 0 ? setShapes(100) : setShapes(0);
+   if (shapes.form === 100) {
+    setShapes((element) => ({...element, col:'lightSalmon'}))
+    setShapes((element) => ({...element, form: 0}))
+   } else {
+    setShapes((element) => ({...element, col:'paleGreen'}))
+    setShapes((element) => ({...element, form: 100}))
+   }
   };
 
   return (
@@ -35,12 +44,12 @@ const Shapesandnumbers = () => {
 
         <button
           style={{ textAlign: "center", padding: "20px" }}
-          onClick={() => setShapes(!shapes)}
+          onClick={() => setNumb(rndNum(5,25))}
         >
           <b>COUNT ME</b>
         </button>
       </div>
-      {<Shapez shapeMe={shapes}/>}
+      {<Shapez shapeMe={shapes.form} colorMe={shapes.col} countMe={numb}/>}
       
     </div>
   );
