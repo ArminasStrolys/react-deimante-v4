@@ -32,7 +32,8 @@ const Cubemaker = () => {
       {console.log(clicks)}
         ADD
       </button>
-      <div>{clicks.map(e=><MiniCube 
+      <div>{clicks.map((e, i)=><MiniCube 
+        key={i}
         cube={e}
       />)}</div>
       {console.log(clicks)}

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import './five.css'
+import "./five.css";
+import Box from "./Box";
 
 const Five = () => {
   const [cubes, setCubes] = useState([]);
@@ -7,9 +8,13 @@ const Five = () => {
   return (
     <>
       <div style={{ height: "50px", textAlign: "center", marginTop: "50px" }}>
-        <button onClick={()=> setCubes((prev) => [...prev, <div className="redBlock"></div>])}>ADD RED</button>
-        <button onClick={()=> setCubes((nex) => [...nex, <div className="blueBlock"></div>])}>ADD BLUE</button>
-        <button onClick={()=> [setCubes('')]}>RESET</button>
+        <button onClick={() => setCubes((val) => [...val, "redBlock"])}>
+          ADD RED
+        </button>
+        <button onClick={() => setCubes((val) => [...val, "blueBlock"])}>
+          ADD BLUE
+        </button>
+        <button onClick={() => setCubes(() => [])}>RESET</button>
       </div>
       <div
         style={{
@@ -19,7 +24,10 @@ const Five = () => {
           backgroundColor: "lightblue",
         }}
       >
-      {[cubes]}
+        {console.log(cubes)}
+        {cubes.map((e, i) => (
+          <Box key={i} col={e} />
+        ))}
       </div>
     </>
   );

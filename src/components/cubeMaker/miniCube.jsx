@@ -7,7 +7,7 @@ function rndNum(min, max) {
 
 const Minicube = (props) => {
     return (
-        <div className="mini">
+        <div key={props.key} className="mini">
         <p className="mini2">{props.cube}</p>
       </div>
     );
