@@ -14,7 +14,7 @@ const Five = () => {
         <button onClick={() => setCubes((val) => [...val, "blueBlock"])}>
           ADD BLUE
         </button>
-        <button onClick={() => setCubes(() => [])}>RESET</button>
+        <button onClick={() => setCubes([])}>RESET</button>
       </div>
       <div
         style={{
@@ -25,8 +25,8 @@ const Five = () => {
         }}
       >
         {console.log(cubes)}
-        {cubes.map((e, i) => (
-          <Box key={i} col={e} />
+        {cubes.map((cube, i) => (
+          <Box key={i} col={cube} />
         ))}
       </div>
     </>

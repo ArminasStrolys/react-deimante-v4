@@ -9,13 +9,9 @@ const Shapes = () => {
   });
 
   const handleNums = () => {
-    if (shapeForm.num === 100) {
-      setShapeForm((shape) => ({ ...shape, num: 0 }));
-      setShapeForm((color) => ({ ...color, col: "blue" }));
-    } else {
-      setShapeForm((shape) => ({ ...shape, num: 100 }));
-      setShapeForm((color) => ({ ...color, col: "red" }));
-    }
+    shapeForm.num === 100
+      ? setShapeForm((shape) => ({ ...shape, num: 0, col: "blue" }))
+      : setShapeForm((shape) => ({ ...shape, num: 100, col: "red" }));
   };
 
   return (
